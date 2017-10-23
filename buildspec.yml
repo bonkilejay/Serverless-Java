@@ -9,7 +9,7 @@ phases:
       - sudo mv target/HelloWorld-1.0.jar .
       - sudo unzip HelloWorld-1.0.jar
       - sudo rm -rf target src buildspec.yml pom.xml HelloWorld-1.0.jar
-      - sudo saws cloudformation package --template template.yml --s3-bucket lambda-function-bucket-eu-central-1-1508618294433  --output-template template-export.yml
+      - sudo aws cloudformation package --template template.yml --s3-bucket lambda-function-bucket-eu-central-1-1508618294433  --output-template template-export.yml
 artifacts:
   files:
     - template-export.yml
