@@ -3,13 +3,13 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo Entering build phase...
-      - echo Build started on `date`
-      - mvn package shade:shade
-      - mv target/HelloWorld-1.0.jar .
-      - unzip HelloWorld-1.0.jar
-      - rm -rf target src buildspec.yml pom.xml HelloWorld-1.0.jar
-      - aws cloudformation package --template template.yml --s3-bucket lambda-function-bucket-eu-central-1-1508618294433  --output-template template-export.yml
+      - sudo echo Entering build phase...
+      - sudo echo Build started on `date`
+      - sudo mvn package shade:shade
+      - sudo mv target/HelloWorld-1.0.jar .
+      - sudo unzip HelloWorld-1.0.jar
+      - sudo rm -rf target src buildspec.yml pom.xml HelloWorld-1.0.jar
+      - sudo saws cloudformation package --template template.yml --s3-bucket lambda-function-bucket-eu-central-1-1508618294433  --output-template template-export.yml
 artifacts:
   files:
     - template-export.yml
